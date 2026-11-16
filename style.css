@@ -1,53 +1,84 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --accent-color: #d4af37;
+    --border-color: #334155;
+    --input-bg: #0f172a;
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
+    padding: 30px 15px;
 }
-.container {
-    max-width: 800px;
+.main-wrapper {
+    max-width: 850px;
     margin: 0 auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-header {
+.form-container {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+}
+.brand-header {
     text-align: center;
     margin-bottom: 30px;
 }
-header h1 {
-    color: #e50914;
-    margin-bottom: 5px;
+.cinema-icon {
+    font-size: 2.5rem;
 }
-fieldset {
-    border: 1px solid #ddd;
-    border-radius: 6px;
+.brand-header h1 {
+    color: var(--accent-color);
+    margin: 10px 0 5px 0;
+    letter-spacing: 1px;
+}
+.brand-header p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin: 0;
+}
+.section-box {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
-    background: #fafafa;
+    margin-bottom: 25px;
+    background: rgba(15, 23, 42, 0.4);
 }
 legend {
-    font-weight: bold;
-    color: white;
-    background: #e50914;
-    padding: 5px 15px;
-    border-radius: 4px;
+    font-weight: 600;
+    color: var(--accent-color);
+    background: var(--bg-color);
+    padding: 6px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
 }
-.form-grid {
+.grid-2col {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
-.form-group {
-    margin-bottom: 15px;
+.grid-3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+}
+.full-width {
+    grid-column: 1 / -1;
+}
+.field-item {
+    margin-bottom: 12px;
 }
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 14px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: #cbd5e1;
+    font-weight: 500;
 }
 input[type="text"],
 input[type="email"],
@@ -64,34 +95,51 @@ input[type="number"],
 select,
 textarea {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-color);
     box-sizing: border-box;
+    font-size: 14px;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }
 textarea {
     resize: vertical;
 }
-.radio-group, .checkbox-group {
+.options-stack, .checkbox-grid {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
-.submit-container {
-    text-align: center;
-    margin-top: 30px;
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
-.submit-btn {
-    background-color: #e50914;
-    color: white;
+.radio-label, .checkbox-grid label {
+    font-weight: normal;
+    color: #e2e8f0;
+    cursor: pointer;
+}
+.action-row {
+    text-align: center;
+    margin-top: 20px;
+}
+.cta-button {
+    background-color: var(--accent-color);
+    color: #0f172a;
     border: none;
-    padding: 12px 30px;
-    font-size: 18px;
+    padding: 14px 35px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 30px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.2s ease-in-out;
 }
-.submit-btn:hover {
-    background-color: #b20710;
+.cta-button:hover {
+    background-color: #f3e5ab;
+    transform: translateY(-2px);
 }
